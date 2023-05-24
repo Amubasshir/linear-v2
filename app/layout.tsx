@@ -1,4 +1,6 @@
 import { Inter } from 'next/font/google';
+import { Container } from './components/Container';
+import Header from './components/Header';
 import './globals.css';
 import Head from './head';
 
@@ -18,7 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Head />
-        {children}
+        <div>
+          <Header />
+
+          <main>{children}</main>
+          <footer>
+            <Container>Footer</Container>
+          </footer>
+        </div>
       </body>
     </html>
   );

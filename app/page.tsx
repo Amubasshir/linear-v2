@@ -1,25 +1,19 @@
 import { Container } from './components/Container';
-import Hero from './components/Hero';
+import Hero, { HeroSubTitle, HeroTitle } from './components/Hero';
 
 export default function Home() {
   return (
-    <div>
-      <header>
-        <Container>header</Container>
-      </header>
-      <main>
-        <Container>
-          <Hero
-            title="Linear is a better way
-to build products"
-            subtitle="Meet the new standard for modern software development.
-Streamline issues, sprints, and product roadmaps."
-          />
-        </Container>
-      </main>
-      <footer>
-        <Container>Footer</Container>
-      </footer>
-    </div>
+    <Container>
+      <Hero>
+        <HeroTitle>
+          Linear is a better way <br /> to build products
+        </HeroTitle>
+        <HeroSubTitle>
+          Meet the new standard for modern software development.
+          <br /> Streamline issues, sprints, and product roadmaps.
+        </HeroSubTitle>
+        <img src="/hero.webp" alt="hero image" />
+      </Hero>
+    </Container>
   );
 }

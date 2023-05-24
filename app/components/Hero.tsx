@@ -1,15 +1,17 @@
 interface HeroProps {
-  title: string;
-  subtitle: string;
+  children: React.ReactNode;
 }
 
-const Hero = ({ title, subtitle }: HeroProps) => {
-  return (
-    <div className="text-center">
-      <h1 className="text-5xl">{title}</h1>
-      <p className="text-lg">{subtitle}</p>
-    </div>
-  );
+export const HeroTitle = ({ children }) => {
+  return <h1 className="my-6 text-8xl">{children}</h1>;
+};
+
+export const HeroSubTitle = ({ children }) => {
+  return <p className="mb-12 text-lg">{children}</p>;
+};
+
+const Hero = ({ children }: HeroProps) => {
+  return <div className="text-center">{children}</div>;
 };
 
 export default Hero;
