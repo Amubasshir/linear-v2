@@ -5,7 +5,7 @@ import { Logo } from './icons/logo';
 
 const Header = () => {
   return (
-    <header className="fixed left-0 top-0 w-full border-b border-transparent-white ">
+    <header className="fixed left-0 top-0 w-full border-b border-transparent-white backdrop-blur-md ">
       <Container className="flex h-[var(--navigation-height)] items-center ">
         <Link
           href="/"
@@ -16,7 +16,7 @@ const Header = () => {
         </Link>
 
         <nav className="h-full">
-          <ul className="flex h-full items-center [&_a]:text-sm [&_li]:ml-6">
+          <ul className="flex h-full items-center [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors [&_li]:ml-6">
             <li>
               <Link href="#">Features</Link>
             </li>

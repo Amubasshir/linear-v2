@@ -69,6 +69,9 @@ module.exports = {
       'glass-gradient':
         'linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)',
     },
+    boxShadow: {
+      primary: 'rgb(80 63 205 / 50%) 0px 1px 40px',
+    },
   },
   plugins: [],
 };
