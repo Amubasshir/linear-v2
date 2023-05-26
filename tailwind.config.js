@@ -77,8 +77,8 @@ module.exports = {
     },
     keyframes: {
       'fade-in': {
-        from: { opacity: 0, y: '-10px' },
-        to: { opacity: 1, y: 'none' },
+        from: { opacity: 0, transform: 'translateY(-10px)' },
+        to: { opacity: 1, transform: 'none' },
       },
     },
     animation: {

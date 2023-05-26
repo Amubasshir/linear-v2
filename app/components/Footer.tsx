@@ -62,13 +62,13 @@ export const Footer = () => (
               <TwitterIcon className="transition-colors duration-300 hover:text-off-white" />
             </Link>
             <Link
-              href="https://twitter.com/lastmubasshir"
+              href="https://github.com/Amubasshir"
               className=" flex text-grey"
             >
               <GithubIcon className="transition-colors duration-300 hover:text-off-white" />
             </Link>
             <Link
-              href="https://twitter.com/lastmubasshir"
+              href="https://mubasshir-ahmed.vercel.app/"
               className=" flex text-grey"
             >
               <SlackIcon className="transition-colors duration-300 hover:text-off-white" />
