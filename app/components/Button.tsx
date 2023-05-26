@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import classNames from 'classnames';
 import Link from 'next/link';
 
 interface ButtonProps extends VariantProps<typeof buttonClasses> {
@@ -9,9 +10,13 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
 const buttonClasses = cva('rounded-full inline-flex items-center', {
   variants: {
     variant: {
-      primary: 'bg-primary-gradient hover:text-shadow hover:shadow-primary',
-      secondary: '',
-      tertiary: '',
+      primary: [
+        'bg-primary-gradient hover:text-shadow hover:shadow-primary transition-[shadow, text-shadow]',
+        '[&_.highlight]:ml-2',
+      ],
+      secondary: [
+        'text-off-white bg-white bg-opacity-10 hover:bg-opacity-20 transition-colors ease-in border border-transparent-white backdrop-filter-md [&_.highlight]:bg-transparent-white [&_.highlight]:rounded-full [&_.highlight]:px-2 [&_.highlight]:ml-2 [&_.highlight]:-mr-3',
+      ],
     },
     size: {
       small: 'text-xs px-3 h-7',
@@ -25,10 +30,28 @@ const buttonClasses = cva('rounded-full inline-flex items-center', {
   },
 });
 
-export const Button = ({ children, href, variant }: ButtonProps) => {
+export const Highlight = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => <span className={classNames('highlight', className)}>{children}</span>;
+
+export const Button = ({ children, variant, size, ...props }: ButtonProps) => {
+  const classes = buttonClasses({ variant, size, className: props.className });
+
+  if ('href' in props && props.href !== undefined) {
+    return (
+      <Link {...props} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <Link className={buttonClasses({ variant })} href={href}>
+    <button {...props} className={classes}>
       {children}
-    </Link>
+    </button>
   );
 };

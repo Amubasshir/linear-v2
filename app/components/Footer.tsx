@@ -51,14 +51,29 @@ export const Footer = () => (
     <Container className="flex flex-col justify-between lg:flex-row">
       <div>
         <div className="flex h-full flex-row justify-between lg:flex-col">
-          <div className="flex cursor-pointer items-center text-grey duration-500 hover:text-off-white">
+          <div className="flex cursor-pointer items-center text-grey transition-colors duration-500 hover:text-off-white">
             <Logo className="mr-4 h-4 w-4 " /> Linear - Designed worldwide
           </div>
-          <Link href="/" className="mt-auto flex space-x-4 text-grey">
-            <TwitterIcon className="duration-300 hover:text-off-white" />
-            <GithubIcon className="duration-300 hover:text-off-white" />
-            <SlackIcon className="duration-300 hover:text-off-white" />
-          </Link>
+          <div className="mt-auto flex items-center space-x-4 pl-1 ">
+            <Link
+              href="https://twitter.com/lastmubasshir"
+              className=" flex text-grey"
+            >
+              <TwitterIcon className="transition-colors duration-300 hover:text-off-white" />
+            </Link>
+            <Link
+              href="https://twitter.com/lastmubasshir"
+              className=" flex text-grey"
+            >
+              <GithubIcon className="transition-colors duration-300 hover:text-off-white" />
+            </Link>
+            <Link
+              href="https://twitter.com/lastmubasshir"
+              className=" flex text-grey"
+            >
+              <SlackIcon className="transition-colors duration-300 hover:text-off-white" />
+            </Link>
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap">

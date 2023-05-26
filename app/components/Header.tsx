@@ -90,7 +90,7 @@ export const Header = () => {
         </div>
 
         <button
-          className="ml-6 md:hidden"
+          className="mx-6 ml-6 md:hidden"
           onClick={() => setHamburgerMenuIsOpen((open) => !open)}
         >
           <span className="sr-only">Toggle menu</span>
