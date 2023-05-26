@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google';
-import { Container } from './components/Container';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import './globals.css';
 import Head from './head';
@@ -23,9 +23,7 @@ export default function RootLayout({
         <div>
           <Header />
           <main className="pt-[var(--navigation-height)]">{children}</main>
-          <footer>
-            <Container>Footer</Container>
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>

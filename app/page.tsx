@@ -13,7 +13,7 @@ export default function Home() {
           <br /> Streamline issues, sprints, and product roadmaps.
         </HeroSubTitle>
 
-        <img src="/hero.webp" alt="hero image" />
+        <img src="/hero.webp" alt="hero image" className="rounded-sm" />
       </Hero>
     </Container>
   );
