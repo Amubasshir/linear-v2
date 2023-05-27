@@ -1,11 +1,12 @@
 import { Button, Highlight } from './components/Button';
 import { Container } from './components/Container';
 import { Hero, HeroSubtitle, HeroTitle } from './components/Hero';
+import { HeroImage } from './components/hero-image';
 import { ChevronIcon } from './components/icons/Chevron';
 
 export default function Home() {
   return (
-    <Container className="pt-[3.4rem] md:pt-[6.4rem]">
+    <Container className="overflow-hidden py-[3.4rem] md:py-[6.4rem]">
       <Hero>
         <Button
           className="animate-fade-in"
@@ -35,12 +36,7 @@ export default function Home() {
             <ChevronIcon />
           </Highlight>
         </Button>
-
-        <img
-          src="/hero.webp"
-          alt="hero image"
-          className="mt-[12.8rem] rounded-sm"
-        />
+        <HeroImage />
       </Hero>
     </Container>
   );
