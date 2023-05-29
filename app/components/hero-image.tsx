@@ -33,13 +33,13 @@ export const HeroImage = () => {
           ...lines,
           {
             direction: Math.random() > 0.5 ? 'to top' : 'to left',
-            duration: randomNumberBetween(1300, 4500),
+            duration: randomNumberBetween(1300, 3500),
             size: randomNumberBetween(10, 30),
             id: Math.random().toString(36).substring(7),
           },
         ]);
 
-        renderLine(randomNumberBetween(800, 3500));
+        renderLine(randomNumberBetween(800, 2500));
       }, timeout);
     };
 
@@ -75,14 +75,14 @@ export const HeroImage = () => {
               className={classNames(
                 'absolute top-0 block h-[1px] w-[10rem] bg-glow-lines',
                 line.direction === 'to left' &&
-                  `left-0 h-[1px] w-[calc(var(--size)*0.1rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*1rem)]`,
+                  `left-0 h-[1px] w-[calc(var(--size)*0.3rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*0.5rem)]`,
                 line.direction === 'to top' &&
-                  `right-0 h-[calc(var(--size)*0.1rem)] w-[0.5px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]`
+                  `right-0 h-[calc(var(--size)*0.2rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*0.5rem)]`
               )}
             />
           ))}
         </div>
-        <svg
+        {/* <svg
           className={classNames(
             'absolute left-0 top-0 h-full w-full',
             '[&_path]:stroke-white [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1] [&_path]:[strokeOpacity:0.2]',
@@ -97,7 +97,7 @@ export const HeroImage = () => {
           <path pathLength="1" d="M1500 189L220 189"></path>
           <path pathLength="1" d="M220 777L220 1"></path>
           <path pathLength="1" d="M538 777L538 128"></path>
-        </svg>
+        </svg> */}
 
         <img
           className={classNames(
