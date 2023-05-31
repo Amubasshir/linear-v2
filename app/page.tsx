@@ -6,6 +6,7 @@ import Clients from './components/clients';
 import { HeroImage } from './components/hero-image';
 import { ChevronIcon } from './components/icons/Chevron';
 import { StarsIllustration } from './components/icons/Star';
+import Unlike from './components/sections/unlike';
 
 export default function Home() {
   return (
@@ -56,6 +57,9 @@ export default function Home() {
         >
           <StarsIllustration />
         </div>
+      </Container>
+      <Container>
+        <Unlike />
       </Container>
     </>
   );
