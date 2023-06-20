@@ -1,13 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./components/**/*.{js,ts,jsx,tsx}', './app/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: '"SF Pro Display",BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+      sans: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
     },
     fontSize: {
       xs: '1.3rem',
@@ -80,7 +76,6 @@ module.exports = {
         from: { opacity: 0, transform: 'translateY(-10px)' },
         to: { opacity: 1, transform: 'none' },
       },
-
       'image-rotate': {
         '0%': { transform: 'rotateX(25deg)' },
         '25%': { transform: 'rotateX(25deg) scale(0.9)' },
@@ -104,7 +99,7 @@ module.exports = {
         '0%': { 'stroke-dashoffset': 1 },
         '50%': { 'stroke-dashoffset': 0 },
         '99%': { 'stroke-dashoffset': 0 },
-        '100%': { visibility: 'hidden' },
+        '100%': { visiblity: 'hidden' },
       },
       'glow-line-horizontal': {
         '0%': { opacity: 0, transform: 'translateX(0)' },
@@ -118,16 +113,31 @@ module.exports = {
         '90%': { opacity: 1 },
         '100%': { opacity: 0, transform: 'translateY(min(21vw, 45rem))' },
       },
+      zap: {
+        '0%, 9%, 11%, 100% ': {
+          fill: 'transparent',
+        },
+        '10%': {
+          fill: 'white',
+        },
+      },
+      bounce: {
+        '50%': {
+          transform: 'scale(0.98)',
+        },
+      },
     },
     animation: {
       'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
       'image-rotate': 'image-rotate 1400ms ease forwards',
       'image-glow': 'image-glow 4100ms 600ms ease-out forwards',
-      'sketch-lines': 'image-glow 1200ms ease-out forwards',
+      'sketch-lines': 'sketch-lines 1200ms ease-out forwards',
       'glow-line-horizontal':
         'glow-line-horizontal var(--animation-duration) ease-in forwards',
       'glow-line-vertical':
         'glow-line-vertical var(--animation-duration) ease-in forwards',
+      zap: 'zap 2250ms calc(var(--index) * 20ms) linear infinite',
+      bounce: '240ms ease 0s 1 running bounce',
     },
   },
   plugins: [],
